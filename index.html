@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+  <title>Resume Builder</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    label {
+      font-weight: bold;
+    }
+    input[type="text"], textarea {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    #output {
+      margin-top: 20px;
+    }
+    
+  </style>
+</head>
+<body>
+  <h1>Resume Builder</h1>
+  
+  <h2>Personal Information</h2>
+  <label for="name">Name:</label>
+  <input type="text" id="name" placeholder="Enter your name">
+  
+  <label for="email">Email:</label>
+  <input type="text" id="email" placeholder="Enter your email">
+  
+  <label for="phone">Phone:</label>
+  <input type="text" id="phone" placeholder="Enter your phone number">
+  
+  <h2>Education</h2>
+  <label for="degree">Degree:</label>
+  <input type="text" id="degree" placeholder="Enter your degree">
+  
+  <label for="university">University:</label>
+  <input type="text" id="university" placeholder="Enter your university">
+  
+  <label for="year">Year:</label>
+  <input type="text" id="year" placeholder="Enter the year of graduation">
+  
+  <h2>Experience</h2>
+  <label for="position">Position:</label>
+  <input type="text" id="position" placeholder="Enter your position">
+  
+  <label for="company">Company:</label>
+  <input type="text" id="company" placeholder="Enter your company">
+  
+  <label for="description">Description:</label>
+  <textarea id="description" placeholder="Enter a brief description"></textarea>
+  
+  <button onclick="generateResume()">Generate Resume</button>
+  
+  <div id="output"></div>
+  
+  <script>
+    function generateResume() {
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var phone = document.getElementById("phone").value;
+      var degree = document.getElementById("degree").value;
+      var university = document.getElementById("university").value;
+      var year = document.getElementById("year").value;
+      var position = document.getElementById("position").value;
+      var company = document.getElementById("company").value;
+      var description = document.getElementById("description").value;
+      
+      var output = document.getElementById("output");
+      output.innerHTML = `
+        <h2>${name}</h2>
+        <p>Email: ${email}</p>
+        <p>Phone: ${phone}</p>
+        
+        <h2>Education</h2>
+        <p>${degree}</p>
+        <p>${university}, ${year}</p>
+        
+        <h2>Experience</h2>
+        <p>${position}</p>
+        <p>${company}</p>
+        <p>${description}</p>
+      `;
+    }
+  </script>
+</body>
+</html>
